@@ -5,54 +5,46 @@
 #include <vector>
 #include <stdio.h>
 using namespace std;
-class Workers
+class Worker
 {
 public:
-    Workers ();
-    virtual void monthlySalary () = 0;
-    ~Workers ();
+    Worker ();
+    Worker (string name);
+    virtual double monthlySalary () = 0;
+    ~Worker ();
+    string getName () const;
+    void setName (string name);
+private:
+    string workerName;
+
 };
 
-class HourlyWorker : Workers
+class HourlyWorker : Worker
 {
 public:
     HourlyWorker ();
-    HourlyWorker (string name);
+    HourlyWorker (string name, int rate);
     HourlyWorker (HourlyWorker &a);
-    string getName () const;
-    void setName (string name);
-    double getAmmount () const;
     void setRate (double rate);
     double getRate () const;
-    virtual void monthlySalary ();
-    void printFiveFirst () const;
-    void printThreeLast () const;
+    virtual double monthlySalary ();
     ~HourlyWorker ();
 private:
-    string workerName;
-    double hourlyRate, ammountMoney = 0;
-    vector <HourlyWorker> workers;
+    double hourlyRate;
 };
 
-class MonthlyWorker : public Workers
+class MonthlyWorker : public Worker
 {
 public:
     MonthlyWorker ();
-    MonthlyWorker (string name);
+    MonthlyWorker (string name, int rate);
     MonthlyWorker (MonthlyWorker &a);
-    string getName () const;
-    void setName (string name);
-    double getAmmount () const;
     void setRate (double rate);
     double getRate () const;
-    virtual void monthlySalary ();
-    void printFiveFirst () const;
-    void printThreeLast () const;
+    virtual double monthlySalary ();
     ~MonthlyWorker ();
 private:
-    string workerName;
-    double monthlyRate, ammountMoney;
-    vector <MonthlyWorker> workers;
+    double monthlyRate;
 };
 
 #endif

@@ -5,32 +5,48 @@
 #include "work.h"
 using namespace std;
 
-HourlyWorker::HourlyWorker (string name)
+Worker::Worker()
+{
+}
+
+Worker::Worker(string name)
 {
     workerName = name;
 }
 
-HourlyWorker::HourlyWorker (HourlyWorker &a)
-{
-    workerName = a.getName();
-    hourlyRate = a.getRate();
-    ammountMoney = a.getAmmount();
-}
-
-string HourlyWorker::getName() const
+string Worker::getName() const
 {
     return workerName;
 }
 
-void HourlyWorker::setName(string name)
+void Worker::setName(string name)
 {
     workerName = name;
 }
 
-double HourlyWorker::getAmmount() const
+Worker::~Worker()
 {
-    return ammountMoney;
+    workerName.clear();
 }
+
+
+
+
+
+
+
+
+
+HourlyWorker::HourlyWorker (string name, int rate) : Worker(name)
+{
+    hourlyRate = rate;
+}
+
+HourlyWorker::HourlyWorker (HourlyWorker &a)
+{
+    hourlyRate = a.getRate();
+}
+
 
 void HourlyWorker::setRate(double rate)
 {
@@ -44,60 +60,25 @@ double HourlyWorker::getRate() const
 
 HourlyWorker::~HourlyWorker()
 {
-    workerName.clear();
 }
 
-void HourlyWorker::monthlySalary ()
+double HourlyWorker::monthlySalary ()
 {
-    ammountMoney += 20.8 * 8 * hourlyRate;
-}
-
-void HourlyWorker::printFiveFirst() const
-{
-    for(int i = 0; i < 4; i++)
-    {
-        printf("%s", workers.getName());
-    }
-}
-
-void HourlyWorker::printThreeLast() const
-{
-    for(int i = workers.size() - 3; i < workers.size(); i++)
-    {
-        printf("%s", workers.getName());
-    }
+    return 20.8 * 8 * hourlyRate;
 }
 
 
 
 
 
-
-MonthlyWorker::MonthlyWorker (string name)
+MonthlyWorker::MonthlyWorker (string name, int rate) : Worker(name)
 {
-    workerName = name;
+    monthlyRate = rate;
 }
 
 MonthlyWorker::MonthlyWorker (MonthlyWorker &a)
 {
-    workerName = a.getName();
     monthlyRate = a.getRate();
-    ammountMoney = a.getAmmount();
-}
-
-string MonthlyWorker::getName() const
-{
-    return workerName;
-}
-
-void MonthlyWorker::setName(string name)
-{
-    workerName = name;
-}
-
-double MonthlyWorker::getAmmount() const
-{
-    return ammountMoney;
 }
 
 void MonthlyWorker::setRate(double rate)
@@ -112,26 +93,9 @@ double MonthlyWorker::getRate() const
 
 MonthlyWorker::~MonthlyWorker()
 {
-    workerName.clear();
 }
 
-void MonthlyWorker::monthlySalary ()
+double MonthlyWorker::monthlySalary ()
 {
-    ammountMoney += monthlyRate;
-}
-
-void MonthlyWorker::printFiveFirst() const
-{
-    for(int i = 0; i < 4; i++)
-    {
-        printf("%s", workers.getName());
-    }
-}
-
-void MonthlyWorker::printThreeLast() const
-{
-    for(int i = workers.size() - 3; i < workers.size(); i++)
-    {
-        printf("%s", workers.getName());
-    }
+    return monthlyRate;
 }
