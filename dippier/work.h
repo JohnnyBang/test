@@ -34,7 +34,7 @@ private:
     vector <HourlyWorker> workers;
 };
 
-class MonthlyWorker : Workers
+class MonthlyWorker : public Workers
 {
 public:
     MonthlyWorker ();
