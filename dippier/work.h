@@ -19,7 +19,7 @@ private:
 
 };
 
-class HourlyWorker : Worker
+class HourlyWorker : public Worker
 {
 public:
     HourlyWorker ();

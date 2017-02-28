@@ -28,6 +28,8 @@
 		045E3FF91E656C7100DE909D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		045E40001E657B4800DE909D /* work.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = work.h; sourceTree = "<group>"; };
 		045E40011E65981F00DE909D /* work.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = work.cpp; sourceTree = "<group>"; };
+		045E40031E65AFFE00DE909D /* output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = output.txt; path = "../../../../Library/Developer/Xcode/DerivedData/dippier-gochjfyglchqxrfiunqzxfrinbcb/Build/Products/Debug/output.txt"; sourceTree = "<group>"; };
+		045E40041E65B01300DE909D /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = input.txt; path = "../../../../Library/Developer/Xcode/DerivedData/dippier-gochjfyglchqxrfiunqzxfrinbcb/Build/Products/Debug/input.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,8 @@
 				045E3FF91E656C7100DE909D /* main.cpp */,
 				045E40001E657B4800DE909D /* work.h */,
 				045E40011E65981F00DE909D /* work.cpp */,
+				045E40041E65B01300DE909D /* input.txt */,
+				045E40031E65AFFE00DE909D /* output.txt */,
 			);
 			path = dippier;
 			sourceTree = "<group>";
